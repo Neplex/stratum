@@ -1,0 +1,12 @@
+{
+  "generator.stratum.stacked_nether_overworld": "Stratum",
+
+  "stratum.configuration.title": "Stratum Configuration",
+  "stratum.configuration.section.general": "General Settings",
+  "stratum.configuration.debugLogging": "Debug Logging",
+  "stratum.configuration.debugLogging.@Comment": "Enable debug logging for Stratum. Useful for troubleshooting layer issues.",
+  "stratum.configuration.maxLayers": "Maximum Layers",
+  "stratum.configuration.maxLayers.@Comment": "Maximum number of layers that can be stacked in a single dimension.",
+  "stratum.configuration.validateLayers": "Validate Layers",
+  "stratum.configuration.validateLayers.@Comment": "Whether to validate layer configurations when loading worlds."
+}

@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "fr.neplex.stratum.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockEntityMixin",
+    "ClientLevelMixin",
+    "LevelMixin",
+    "RandomStateMixin",
+    "ServerLevelMixin",
+    "ServerPlayerGameModeMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
