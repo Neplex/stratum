@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.141'
+    id 'com.modrinth.minotaur' version '2.+'
     id 'idea'
 }
 
@@ -189,4 +190,17 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
+}
+
+// Modrinth publishing configuration
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = project.mod_id
+    versionNumber = project.mod_version
+    versionType = System.getenv("MODRINTH_VERSION_TYPE") ?: "release"
+    uploadFile = jar
+    gameVersions = [project.minecraft_version]
+    loaders = ["neoforge"]
+    changelog = System.getenv("MODRINTH_CHANGELOG") ?: ""
+    syncBodyFrom = rootProject.file("README.md").text
 }

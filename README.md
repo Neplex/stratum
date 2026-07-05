@@ -1,25 +1,10 @@
+# Stratum
 
-Installation information
-=======
+**Stratum** is a dimension-stacking mod that fuses independent worlds into a single, seamless vertical journey.
+Dig straight through the bedrock of the Overworld to drop directly into the ceilings of the Nether—no portals or loading screens required.
+It is made for mods like [Create: Aeronautics](https://modrinth.com/mod/create-aeronautics) and was built for the [Create: Above the Clouds](https://modrinth.com/modpack/create-above-the-clouds) modpack.
 
-This template repository can be directly cloned to get you started with a new
-mod. Simply create a new repository cloned from this one, by following the
-instructions provided by [GitHub](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
-
-Once you have your clone, simply open the repository in the IDE of your choice. The usual recommendation for an IDE is either IntelliJ IDEA or Eclipse.
-
-If at any point you are missing libraries in your IDE, or you've run into problems you can
-run `gradlew --refresh-dependencies` to refresh the local cache. `gradlew clean` to reset everything 
-{this does not affect your code} and then start the process again.
-
-Mapping Names:
-============
-By default, the MDK is configured to use the official mapping names from Mojang for methods and fields 
-in the Minecraft codebase. These names are covered by a specific license. All modders should be aware of this
-license. For the latest license text, refer to the mapping file itself, or the reference copy here:
-https://github.com/NeoForged/NeoForm/blob/main/Mojang.md
-
-Additional Resources: 
-==========
-Community Documentation: https://docs.neoforged.net/  
-NeoForged Discord: https://discord.neoforged.net/
+* **Seamless Stacking:** Connects multiple dimensions vertically into a single world, removing loading screens and portal transitions when moving between height levels.
+* **Height Zone Isolation:** Restricts dimension-specific mechanics, surface rules, and generation parameters to distinct, non-overlapping coordinate ranges.
+* **Sandboxed Worldgen:** Coordinates the placement of biomes, carvers, structures, and features so they generate exclusively within their assigned vertical layer bounds.
+* **Data-Driven Configuration:** Uses standard datapack files to define custom layer heights, stacking orders, and dimension configurations.
