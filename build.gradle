@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id 'com.palantir.git-version' version "5.0.0"
     id 'net.neoforged.moddev' version '2.0.141'
     id 'com.modrinth.minotaur' version '2.+'
     id 'idea'
@@ -15,7 +16,7 @@ tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
-version = mod_version
+version = gitVersion()
 group = mod_group_id
 
 sourceSets.main.resources {
@@ -153,7 +154,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_id                 : mod_id,
             mod_name               : mod_name,
             mod_license            : mod_license,
-            mod_version            : mod_version,
+            mod_version            : version,
     ]
     inputs.properties replaceProperties
     expand replaceProperties
@@ -195,12 +196,11 @@ idea {
 // Modrinth publishing configuration
 modrinth {
     token = System.getenv("MODRINTH_TOKEN")
-    projectId = project.mod_id
-    versionNumber = project.mod_version
+    projectId = mod_id
+    versionNumber = version.toString()
     versionType = System.getenv("MODRINTH_VERSION_TYPE") ?: "release"
     uploadFile = jar
-    gameVersions = [project.minecraft_version]
+    gameVersions = [minecraft_version]
     loaders = ["neoforge"]
     changelog = System.getenv("MODRINTH_CHANGELOG") ?: ""
-    syncBodyFrom = rootProject.file("README.md").text
 }
